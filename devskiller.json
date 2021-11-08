@@ -1,0 +1,24 @@
+{
+  "candidateTestsIncludedInScoring": false,
+  "verification": {
+    "testNamePatterns": [
+      ".*verify_pack.*"
+    ],
+    "pathPatterns": [
+      "**tests/verify_pack**"
+    ]
+  },
+  "readOnlyFiles": [
+    "tests/**",
+    "public/**",
+    ".gitignore",
+    "babel.config.js",
+    "package-lock.json",
+    "package.json"
+  ],
+  "hiddenFiles": [
+    "node_modules",
+    "node_modules/**",
+    "test-results.xml"
+  ]
+}
