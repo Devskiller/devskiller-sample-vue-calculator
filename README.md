@@ -37,6 +37,33 @@ The project will be executed with the following command:
 npm install && npm test
 ```
 
+When configuring the project, make sure that the **test-results.xml** file in JUnit format is returned as the output of the test execution. 
+
+In this case, **jest-junit** is added to **package.json** and used as a test reporter.
+
+```json
+"dependencies": {
+	"jest-junit": "^12.0.0"
+},
+
+"jest-junit": {
+	"outputName": "./test-results.xml",
+	"suiteName": "jest tests",
+	"suiteNameTemplate": "{filepath}",
+	"classNameTemplate": "{classname}",
+	"titleTemplate": "{title}",
+	"ancestorSeparator": " › "
+},
+
+"jest": {
+	"preset": "@vue/cli-plugin-unit-jest",
+	"reporters": [
+		"default",
+		"jest-junit"
+	]
+},
+```
+
 **When compressing the project contents into a ZIP archive please skip
 `./node_modules` directories.**
 
